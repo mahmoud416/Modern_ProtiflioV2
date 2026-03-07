@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahmoud Sami | DevOps &amp; Backend Engineer</title>
+    <meta name="description" content="Terminal-style portfolio for Mahmoud Sami, DevOps and Backend Engineer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+      <div class="boot-content">
+        <pre class="ascii-logo">
+  ███╗   ███╗ ███████╗ ██╗  ██╗ ███╗   ███╗  ██████╗  ██╗   ██╗ ██████╗
+  ████╗ ████║ ██╔══██║ ██║  ██║ ████╗ ████║ ██╔═══██╗ ██║   ██║ ██╔══██╗
+  ██╔████╔██║ ███████║ ███████║ ██╔████╔██║ ██║   ██║ ██║   ██║ ██║  ██║
+  ██║╚██╔╝██║ ██╔══██║ ██╔══██║ ██║╚██╔╝██║ ██║   ██║ ██║   ██║ ██║  ██║
+  ██║ ╚═╝ ██║ ██║  ██║ ██║  ██║ ██║ ╚═╝ ██║ ╚██████╔╝ ╚██████╔╝ ██████╔╝
+  ╚═╝     ╚═╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝     ╚═╝  ╚═════╝   ╚═════╝  ╚═════╝ </pre>
+        <p class="boot-subtitle">DevOps &amp; Backend Engineer • v2.0.0</p>
+        <div class="boot-log" id="boot-log"></div>
+        <div class="boot-progress-wrap">
+          <div class="boot-progress-bar" id="boot-bar"></div>
+        </div>
+        <p class="boot-hint" id="boot-hint"></p>
+      </div>
+    </div>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <header class="nav-wrapper" id="navbar">
+      <nav class="container nav">
+        <a href="#home" class="logo">root@mahmoud:<span class="logo-path">~</span><span class="logo-dollar">$</span><span class="logo-blink">█</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="nav-list">
+          <li><a href="#about"><span class="nav-num">01.</span>About</a></li>
+          <li><a href="#education"><span class="nav-num">02.</span>Education</a></li>
+          <li><a href="#skills"><span class="nav-num">03.</span>Skills</a></li>
+          <li><a href="#analysis"><span class="nav-num">04.</span>Analysis</a></li>
+          <li><a href="#services"><span class="nav-num">05.</span>Services</a></li>
+          <li><a href="#projects"><span class="nav-num">06.</span>Projects</a></li>
+          <li><a href="#contact"><span class="nav-num">07.</span>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero container section">
+        <div class="hero-text reveal">
+          <p class="tag">[ DEVOPS + BACKEND ENGINEER ]</p>
+          <h1 class="glitch" data-text="Building Reliable Production Systems.">Building Reliable<br>Production Systems.</h1>
+          <p class="subtitle">
+            DevOps Engineer and Backend Developer with hands-on experience in Linux, CI/CD workflows,
+            API development, and deployment automation. Focused on stability, security, and clean architecture.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">
+              <span>./view_projects.sh</span>
+            </a>
+            <a class="btn btn-ghost" href="#contact">
+              <span>hire --me</span>
+            </a>
+          </div>
+          <div class="quick-links">
+            <a href="https://github.com/mahmoud416" target="_blank" rel="noopener noreferrer">
+              <span class="ql-icon">⬡</span> GitHub
+            </a>
+            <a href="mailto:mahmoud35868220@gmail.com">
+              <span class="ql-icon">⬡</span> Email
+            </a>
+            <a href="https://www.linkedin.com/in/mahmoud-mohamed-691999258" target="_blank" rel="noopener noreferrer">
+              <span class="ql-icon">⬡</span> LinkedIn
+            </a>
+            <a href="tel:01154614917">
+              <span class="ql-icon">⬡</span> 01154614917
+            </a>
+          </div>
+        </div>
+
+        <article class="terminal-window reveal" id="hero-terminal">
+          <div class="terminal-head">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <p class="terminal-title">mahmoud@portfolio: ~/profile</p>
+            <div class="terminal-actions">
+              <span>─</span><span>□</span><span>✕</span>
+            </div>
+          </div>
+          <div class="terminal-layout">
+            <div class="terminal-shell" id="terminal-shell">
+              <div class="shell-line"><span class="prompt-sym">$</span> <span class="cmd-text">whoami</span></div>
+              <div class="output type-line" data-type="Mahmoud Mohamed Sami"></div>
+              <div class="shell-line"><span class="prompt-sym">$</span> <span class="cmd-text">cat roles.txt</span></div>
+              <div class="output type-line" data-type="DevOps Engineer | Backend Developer (.NET / Node.js)"></div>
+              <div class="shell-line"><span class="prompt-sym">$</span> <span class="cmd-text">./load_skills.sh</span></div>
+              <div class="output type-line" data-type="linux docker kubernetes aspnetcore nodejs git bash"></div>
+              <div class="shell-line"><span class="prompt-sym">$</span> <span class="cmd-text">status --verbose</span></div>
+              <div class="output live-output">Open to internships, freelance &amp; junior backend/devops roles</div>
+              <div class="shell-line"><span class="prompt-sym">$</span> <span class="cmd-text">run --pipeline</span></div>
+              <div class="output" id="live-command"></div>
+              <div id="interactive-output"></div>
+              <div class="terminal-input-wrap">
+                <span class="prompt-sym">$</span>
+                <span class="prompt-path">~/portfolio</span>
+                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="type a command... (try: help)" />
+              </div>
+            </div>
+            <aside class="profile-panel">
+              <div class="profile-ring">
+                <div class="profile-scan"></div>
+                <img src="assets/profile.jpg" loading="lazy" alt="Mahmoud Mohamed Sami" />
+              </div>
+              <div class="profile-info">
+                <h3>Mahmoud Sami</h3>
+                <p class="profile-role">DevOps • Backend</p>
+                <div class="profile-badges">
+                  <span class="badge">Linux</span>
+                  <span class="badge">Docker</span>
+                  <span class="badge">.NET</span>
+                  <span class="badge">Node</span>
+                </div>
+                <div class="status-dot-wrap">
+                  <span class="status-dot"></span>
+                  <span class="status-text">Available for hire</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </article>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="container section">
+        <div class="section-header reveal">
+          <span class="section-tag">// 01</span>
+          <h2 class="section-title glitch" data-text="About Me">About Me</h2>
+          <div class="title-line"></div>
+        </div>
+        <article class="terminal-card reveal">
+          <div class="card-head">
+            <span class="card-head-dot"></span>
+            <span>~/about.md</span>
+            <span class="card-lang">markdown</span>
+          </div>
+          <div class="card-body">
+            <div class="about-grid">
+              <div>
+                <p>
+                  Computer Science student at October 6 University and a DevOps/Backend engineer in training.
+                  I work on API development, database integration, Linux administration, and CI/CD automation.
+                </p>
+                <p>
+                  My goal is to deliver production-ready applications with clean code, predictable deployments,
+                  and maintainable infrastructure. I believe in building systems that scale and survive.
+                </p>
+              </div>
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <span class="stat-num" data-count="25">0</span>
+                  <span class="stat-label">Repositories</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num" data-count="6">0</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num" data-count="4">0</span>
+                  <span class="stat-label">Years Study</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num" data-count="100">0</span>
+                  <span class="stat-label">% Committed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="container section">
+        <div class="section-header reveal">
+          <span class="section-tag">// 02</span>
+          <h2 class="section-title glitch" data-text="Education">Education</h2>
+          <div class="title-line"></div>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <article class="terminal-card timeline-card">
+              <div class="card-head">
+                <span class="card-head-dot"></span>
+                <span>~/education.log</span>
+                <span class="card-lang">log</span>
+              </div>
+              <div class="card-body">
+                <div class="edu-row">
+                  <div>
+                    <h3>B.Sc. in Computer Science</h3>
+                    <p class="accent">October 6 University</p>
+                    <p class="muted-text">2022 — 2026</p>
+                  </div>
+                  <div class="gpa-badge">
+                    <span class="gpa-label">GPA</span>
+                    <span class="gpa-value">3.0</span>
+                  </div>
+                </div>
+                <div class="edu-tags">
+                  <span class="tag-pill">Algorithms</span>
+                  <span class="tag-pill">OS</span>
+                  <span class="tag-pill">Networks</span>
+                  <span class="tag-pill">Databases</span>
+                  <span class="tag-pill">Software Engineering</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="container section">
+        <div class="section-header reveal">
+          <span class="section-tag">// 03</span>
+          <h2 class="section-title glitch" data-text="Skills">Skills</h2>
+          <div class="title-line"></div>
+        </div>
+        <div class="grid reveal">
+          <article class="terminal-card skill-card">
+            <div class="card-head">
+              <span class="card-head-dot devops"></span>
+              <span>devops.skills</span>
+              <span class="card-lang">bash</span>
+            </div>
+            <div class="card-body">
+              <h3><span class="skill-icon">🐧</span> Linux &amp; DevOps</h3>
+              <ul class="skill-list">
+                <li><span class="bullet">▸</span> Linux Administration (Ubuntu / Red Hat)</li>
+                <li><span class="bullet">▸</span> CI/CD Pipelines</li>
+                <li><span class="bullet">▸</span> Docker / Containers</li>
+                <li><span class="bullet">▸</span> Monitoring Basics</li>
+              </ul>
+              <div class="tech-badges">
+                <span class="tech">Linux</span>
+                <span class="tech">Docker</span>
+                <span class="tech">CI/CD</span>
+              </div>
+            </div>
+          </article>
+          <article class="terminal-card skill-card">
+            <div class="card-head">
+              <span class="card-head-dot dotnet"></span>
+              <span>backend-dotnet.skills</span>
+              <span class="card-lang">csharp</span>
+            </div>
+            <div class="card-body">
+              <h3><span class="skill-icon">🧩</span> Backend .NET</h3>
+              <ul class="skill-list">
+                <li><span class="bullet">▸</span> ASP.NET Core Web API</li>
+                <li><span class="bullet">▸</span> C# / OOP / EF Core</li>
+                <li><span class="bullet">▸</span> SQL Server</li>
+                <li><span class="bullet">▸</span> Authentication / Authorization</li>
+              </ul>
+              <div class="tech-badges">
+                <span class="tech">C#</span>
+                <span class="tech">ASP.NET</span>
+                <span class="tech">EF Core</span>
+              </div>
+            </div>
+          </article>
+          <article class="terminal-card skill-card">
+            <div class="card-head">
+              <span class="card-head-dot node"></span>
+              <span>backend-node.skills</span>
+              <span class="card-lang">javascript</span>
+            </div>
+            <div class="card-body">
+              <h3><span class="skill-icon">🚀</span> Backend Node.js</h3>
+              <ul class="skill-list">
+                <li><span class="bullet">▸</span> Node.js / Express</li>
+                <li><span class="bullet">▸</span> REST APIs</li>
+                <li><span class="bullet">▸</span> Validation / Error Handling</li>
+                <li><span class="bullet">▸</span> Performance Basics</li>
+              </ul>
+              <div class="tech-badges">
+                <span class="tech">Node.js</span>
+                <span class="tech">Express</span>
+                <span class="tech">REST</span>
+              </div>
+            </div>
+          </article>
+          <article class="terminal-card skill-card">
+            <div class="card-head">
+              <span class="card-head-dot tool"></span>
+              <span>tooling.skills</span>
+              <span class="card-lang">shell</span>
+            </div>
+            <div class="card-body">
+              <h3><span class="skill-icon">🔧</span> Tooling</h3>
+              <ul class="skill-list">
+                <li><span class="bullet">▸</span> Git / GitHub</li>
+                <li><span class="bullet">▸</span> Bash Scripting</li>
+                <li><span class="bullet">▸</span> Postman</li>
+                <li><span class="bullet">▸</span> Networking Fundamentals</li>
+              </ul>
+              <div class="tech-badges">
+                <span class="tech">Git</span>
+                <span class="tech">Bash</span>
+                <span class="tech">Postman</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ANALYSIS -->
+      <section id="analysis" class="container section">
+        <div class="section-header reveal">
+          <span class="section-tag">// 04</span>
+          <h2 class="section-title glitch" data-text="Capability Analysis">Capability Analysis</h2>
+          <div class="title-line"></div>
+        </div>
+        <div class="grid reveal">
+          <article class="terminal-card">
+            <div class="card-head">
+              <span class="card-head-dot"></span>
+              <span>analysis/devops.json</span>
+              <span class="card-lang">json</span>
+            </div>
+            <div class="card-body">
+              <h3>DevOps Execution</h3>
+              <div class="meter-wrap">
+                <div class="meter-label">
+                  <span>Proficiency</span>
+                  <span class="meter-pct" data-level="88">0%</span>
+                </div>
+                <div class="meter" data-level="88"><span></span></div>
+              </div>
+              <p>Strong in deployment automation, Linux operations, and release workflows.</p>
+            </div>
+          </article>
+          <article class="terminal-card">
+            <div class="card-head">
+              <span class="card-head-dot"></span>
+              <span>analysis/backend.json</span>
+              <span class="card-lang">json</span>
+            </div>
+            <div class="card-body">
+              <h3>Backend Engineering</h3>
+              <div class="meter-wrap">
+                <div class="meter-label">
+                  <span>Proficiency</span>
+                  <span class="meter-pct" data-level="90">0%</span>
+                </div>
+                <div class="meter" data-level="90"><span></span></div>
+              </div>
+              <p>Confident in API architecture, business logic design, and clean code structure.</p>
+            </div>
+          </article>
+          <article class="terminal-card">
+            <div class="card-head">
+              <span class="card-head-dot"></span>
+              <span>analysis/problem-solving.json</span>
+              <span class="card-lang">json</span>
+            </div>
+            <div class="card-body">
+              <h3>Problem Solving</h3>
+              <div class="meter-wrap">
+                <div class="meter-label">
+                  <span>Proficiency</span>
+                  <span class="meter-pct" data-level="84">0%</span>
+                </div>
+                <div class="meter" data-level="84"><span></span></div>
+              </div>
+              <p>Systematic debugging and practical engineering decisions for real-world issues.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="container section">
+        <div class="section-header reveal">
+          <span class="section-tag">// 05</span>
+          <h2 class="section-title glitch" data-text="Services">Services</h2>
+          <div class="title-line"></div>
+        </div>
+        <div class="grid reveal">
+          <article class="terminal-card service-card">
+            <div class="card-head">
+              <span class="card-head-dot"></span>
+              <span>service_backend.sh</span>
+              <span class="card-lang">bash</span>
+            </div>
+            <div class="card-body">
+              <div class="service-icon">⚙️</div>
+              <h3>Backend Development</h3>
+              <p>Build secure and scalable APIs with clean architecture and maintainable code.</p>
+              <div class="service-stack">
+                <span>.NET</span><span>Node.js</span><span>SQL</span>
+              </div>
+            </div>
+          </article>
+          <article class="terminal-card service-card">
+            <div class="card-head">
+              <span class="card-head-dot"></span>
+              <span>service_deploy.sh</span>
+              <span class="card-lang">bash</span>
+            </div>
+            <div class="card-body">
+              <div class="service-icon">🚀</div>
+              <h3>DevOps Setup</h3>
+              <p>Create CI/CD workflows and deployment environments for faster delivery.</p>
+              <div class="service-stack">
+                <span>Docker</span><span>CI/CD</span><span>Linux</span>
+              </div>
+            </div>
+          </article>
+          <article class="terminal-card service-card">
+            <div class="card-head">
+              <span class="card-head-dot"></span>
+              <span>service_optimize.sh</span>
+              <span class="card-lang">bash</span>
+            </div>
+            <div class="card-body">
+              <div class="service-icon">📊</div>
+              <h3>System Optimization</h3>
+              <p>Improve stability, observability, and runtime performance in production systems.</p>
+              <div class="service-stack">
+                <span>Monitoring</span><span>Logging</span><span>Perf</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="container section">
+        <div class="section-header reveal">
+          <span class="section-tag">// 06</span>
+          <h2 class="section-title glitch" data-text="Projects">Projects</h2>
+          <div class="title-line"></div>
+        </div>
+
+        <div class="projects-label reveal">
+          <span class="prompt-sym">$</span> ls -la ./major-projects/
+        </div>
+        <div class="grid reveal">
+          <article class="terminal-card project-card">
+            <div class="card-head">
+              <span class="card-head-dot node"></span>
+              <span>project_01 ~/major</span>
+              <span class="card-lang">dotnet</span>
+            </div>
+            <div class="card-body">
+              <h3>Steps Learning Backend .NET</h3>
+              <p>ASP.NET Core learning repository with practical backend concepts, clean architecture patterns, and real-world API examples.</p>
+              <div class="project-meta">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">ASP.NET</span>
+                <span class="project-tag">EF Core</span>
+              </div>
+              <a class="project-link" href="https://github.com/mahmoud416/StepsLearning_Backend_DotNet" target="_blank" rel="noopener noreferrer">
+                <span>→</span> View on GitHub
+              </a>
+            </div>
+          </article>
+          <article class="terminal-card project-card">
+            <div class="card-head">
+              <span class="card-head-dot node"></span>
+              <span>project_02 ~/major</span>
+              <span class="card-lang">javascript</span>
+            </div>
+            <div class="card-body">
+              <h3>NTI MEAN Stack Auth BookStore</h3>
+              <p>Full stack bookstore platform with JWT authentication, modular design, and MongoDB integration.</p>
+              <div class="project-meta">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">Angular</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+              <a class="project-link" href="https://github.com/mahmoud416/NtiMeanStack-Auth-BookStore" target="_blank" rel="noopener noreferrer">
+                <span>→</span> View on GitHub
+              </a>
+            </div>
+          </article>
+          <article class="terminal-card project-card">
+            <div class="card-head">
+              <span class="card-head-dot devops"></span>
+              <span>project_03 ~/major</span>
+              <span class="card-lang">github</span>
+            </div>
+            <div class="card-body">
+              <h3>25 GitHub Repositories Challenge</h3>
+              <p>A personal challenge — 25 repositories covering backend engineering, DevOps automation, and software growth.</p>
+              <div class="project-meta">
+                <span class="project-tag">Backend</span>
+                <span class="project-tag">DevOps</span>
+                <span class="project-tag">Various</span>
+              </div>
+              <a class="project-link" href="https://github.com/mahmoud416" target="_blank" rel="noopener noreferrer">
+                <span>→</span> Explore Repos
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-label reveal" style="margin-top:2rem;">
+          <span class="prompt-sym">$</span> ls -la ./small-projects/
+        </div>
+        <div class="grid reveal">
+          <article class="terminal-card project-card">
+            <div class="card-head">
+              <span class="card-head-dot tool"></span>
+              <span>project_01 ~/small</span>
+              <span class="card-lang">html</span>
+            </div>
+            <div class="card-body">
+              <h3>E-commerce Frontend</h3>
+              <p>Responsive UI with modern layout and user-focused experience deployed on Netlify.</p>
+              <div class="project-meta">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JS</span>
+              </div>
+              <a class="project-link" href="https://ecommerce77777.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <span>→</span> Live Demo
+              </a>
+            </div>
+          </article>
+          <article class="terminal-card project-card">
+            <div class="card-head">
+              <span class="card-head-dot tool"></span>
+              <span>project_02 ~/small</span>
+              <span class="card-lang">bash</span>
+            </div>
+            <div class="card-body">
+              <h3>Automation &amp; API Practice</h3>
+              <p>Backend and scripting practice to improve API handling and automation skills.</p>
+              <div class="project-meta">
+                <span class="project-tag">Bash</span>
+                <span class="project-tag">API</span>
+                <span class="project-tag">Scripts</span>
+              </div>
+              <a class="project-link" href="https://github.com/mahmoud416" target="_blank" rel="noopener noreferrer">
+                <span>→</span> Open GitHub
+              </a>
+            </div>
+          </article>
+          <article class="terminal-card project-card">
+            <div class="card-head">
+              <span class="card-head-dot tool"></span>
+              <span>project_03 ~/small</span>
+              <span class="card-lang">javascript</span>
+            </div>
+            <div class="card-body">
+              <h3>Frontend Mini Apps</h3>
+              <p>Mini projects for JavaScript interaction and UI animation practice and learning.</p>
+              <div class="project-meta">
+                <span class="project-tag">Vanilla JS</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">DOM</span>
+              </div>
+              <a class="project-link" href="https://github.com/mahmoud416" target="_blank" rel="noopener noreferrer">
+                <span>→</span> Open GitHub
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="container section">
+        <div class="section-header reveal">
+          <span class="section-tag">// 07</span>
+          <h2 class="section-title glitch" data-text="Contact">Contact</h2>
+          <div class="title-line"></div>
+        </div>
+        <article class="terminal-card reveal contact-card">
+          <div class="card-head">
+            <span class="card-head-dot"></span>
+            <span>~/contact.sh</span>
+            <span class="card-lang">bash</span>
+          </div>
+          <div class="card-body">
+            <div class="contact-inner">
+              <div class="contact-text">
+                <pre class="contact-ascii">
+  ╔══════════════════════════════╗
+  ║  OPEN FOR OPPORTUNITIES      ║
+  ║  Internships • Freelance     ║
+  ║  Backend • DevOps • Collab   ║
+  ╚══════════════════════════════╝</pre>
+                <p>Let's build something powerful together. Reach out through any channel below.</p>
+              </div>
+              <div class="contact-methods">
+                <a class="contact-row" href="mailto:mahmoud35868220@gmail.com">
+                  <span class="contact-icon">📧</span>
+                  <span class="contact-label">mahmoud35868220@gmail.com</span>
+                  <span class="contact-arrow">→</span>
+                </a>
+                <a class="contact-row" href="https://github.com/mahmoud416" target="_blank" rel="noopener noreferrer">
+                  <span class="contact-icon">⬡</span>
+                  <span class="contact-label">github.com/mahmoud416</span>
+                  <span class="contact-arrow">→</span>
+                </a>
+                <a class="contact-row" href="https://www.linkedin.com/in/mahmoud-mohamed-691999258" target="_blank" rel="noopener noreferrer">
+                  <span class="contact-icon">🔗</span>
+                  <span class="contact-label">linkedin.com/in/mahmoud-mohamed</span>
+                  <span class="contact-arrow">→</span>
+                </a>
+                <a class="contact-row" href="tel:01154614917">
+                  <span class="contact-icon">📞</span>
+                  <span class="contact-label">01154614917</span>
+                  <span class="contact-arrow">→</span>
+                </a>
+              </div>
+            </div>
+            <div class="contact-btns">
+              <a class="btn btn-primary" href="mailto:mahmoud35868220@gmail.com">
+                <span>send_message --encrypt</span>
+              </a>
+              <a class="btn btn-ghost" href="https://github.com/mahmoud416" target="_blank" rel="noopener noreferrer">
+                <span>git clone mahmoud416</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p class="footer-logo">root@mahmoud:<span>~</span>$</p>
+        <p>© <span id="year"></span> Mahmoud Mohamed Sami — Built with passion &amp; Fira Code.</p>
+        <p class="footer-hint">[ try typing <span>sudo hire-me</span> in the terminal above ]</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
