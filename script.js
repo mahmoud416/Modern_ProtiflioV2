@@ -514,6 +514,46 @@ function setYear() {
   if (el) el.textContent = new Date().getFullYear();
 }
 
+/* ─── THEME TOGGLE ───────────────────────────────────────────── */
+function initThemeToggle() {
+  const btn  = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+  if (!btn) return;
+
+  const saved = localStorage.getItem("theme") || "dark";
+  if (saved === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    if (icon) icon.textContent = "🌙";
+  }
+
+  btn.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next    = current === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+
+    if (icon) {
+      icon.style.transform = "rotate(360deg)";
+      icon.textContent = next === "light" ? "🌙" : "☀";
+      setTimeout(() => { icon.style.transform = ""; }, 500);
+    }
+  });
+}
+
+/* ─── PIXEL RUNNER TURBO ─────────────────────────────────────── */
+function initPixelRunner() {
+  const runner = document.getElementById("pixel-runner");
+  if (!runner) return;
+
+  let turbo = false;
+  runner.addEventListener("click", () => {
+    turbo = !turbo;
+    runner.classList.toggle("turbo", turbo);
+    const label = runner.querySelector(".px-label");
+    if (label) label.textContent = turbo ? "⚡ TURBO MODE" : "mahmoud@run";
+  });
+}
+
 /* ─── INIT ALL ───────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
   initMatrixRain();
@@ -528,5 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startLiveTicker();
   initInteractiveTerminal();
   initCardTilt();
+  initThemeToggle();
+  initPixelRunner();
   setYear();
 });

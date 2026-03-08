@@ -44,9 +44,6 @@
     <header class="nav-wrapper" id="navbar">
       <nav class="container nav">
         <a href="#home" class="logo">root@mahmoud:<span class="logo-path">~</span><span class="logo-dollar">$</span><span class="logo-blink">█</span></a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
         <ul id="nav-list">
           <li><a href="#about"><span class="nav-num">01.</span>About</a></li>
           <li><a href="#education"><span class="nav-num">02.</span>Education</a></li>
@@ -56,6 +53,14 @@
           <li><a href="#projects"><span class="nav-num">06.</span>Projects</a></li>
           <li><a href="#contact"><span class="nav-num">07.</span>Contact</a></li>
         </ul>
+        <div class="nav-right">
+          <button id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+            <span id="theme-icon">☀</span>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -655,6 +660,13 @@
         <p class="footer-hint">[ try typing <span>sudo hire-me</span> in the terminal above ]</p>
       </div>
     </footer>
+
+    <!-- Pixel Runner -->
+    <div class="pixel-runner" id="pixel-runner" title="Click to turbo!">
+      <div class="px-base px-f1"></div>
+      <div class="px-base px-f2"></div>
+      <span class="px-label">mahmoud@run</span>
+    </div>
 
     <script src="script.js"></script>
   </body>
