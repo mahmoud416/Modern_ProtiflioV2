@@ -329,7 +329,7 @@ function initInteractiveTerminal() {
     whoami: () => [
       'Mahmoud Mohamed Sami',
       'DevOps Engineer & Backend Developer',
-      'October 6 University — CS, 2022-2026',
+      'City of Science and Culture — CS, 2022-2026',
     ],
     skills: () => [
       '<span style="color:var(--secondary)">Core Skills:</span>',
